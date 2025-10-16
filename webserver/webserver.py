@@ -2519,9 +2519,9 @@ if __name__ == '__main__':
             cur = conn.cursor()
             cur.execute("SELECT * FROM Programs WHERE File=?", (st_file,))
             row = cur.fetchone()
-            openplc_runtime.project_name = str(row[1])
-            openplc_runtime.project_description = str(row[2])
-            openplc_runtime.project_file = str(row[3])
+            openplc_runtime.project_name = "plc" #str(row[1])
+            openplc_runtime.project_description = "plc_simulado"#str(row[2])
+            openplc_runtime.project_file = "plc.st"#str(row[3])
             
             cur.execute("SELECT * FROM Settings")
             rows = cur.fetchall()
@@ -2530,7 +2530,7 @@ if __name__ == '__main__':
             
             for row in rows:
                 if (row[0] == "Start_run_mode"):
-                    start_run = str(row[1])
+                    start_run = 'true' #str(row[1])
                     
             if (start_run == 'true'):
                 print("Initializing OpenPLC in RUN mode...")
