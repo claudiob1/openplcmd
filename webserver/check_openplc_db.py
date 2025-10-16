@@ -20,7 +20,7 @@ createTablePrograms = r"""CREATE TABLE `Programs` (
     `Date_upload`	INTEGER NOT NULL
 )"""
 
-insertblankProgram = r"INSERT INTO Programs VALUES (1, 'Blank Program', 'Dummy empty program', 'blank_program.st', 1527184953)"
+insertblankProgram = r"INSERT INTO Programs VALUES (1, 'plc', 'plc simulado', 'plc.st', 1527184953)"
 
 createTableSettings = r"""CREATE TABLE `Settings` (
     `Key`	TEXT NOT NULL UNIQUE,
@@ -118,7 +118,7 @@ def checkTableSettings(conn):
     checkTableExists(conn, "Settings", createTableSettings)
     checkSettingExists(conn, 'Modbus_port', '502')
     checkSettingExists(conn, 'Dnp3_port', '20000')
-    checkSettingExists(conn, 'Start_run_mode', 'false')
+    checkSettingExists(conn, 'Start_run_mode', 'true')
     checkSettingExists(conn, 'snap7', 'false')
     checkSettingExists(conn, 'Slave_polling', '100')
     checkSettingExists(conn, 'Slave_timeout', '1000')
